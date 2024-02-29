@@ -18,17 +18,17 @@ int divide(std::vector<int>& arr, int lowest, int highest){
     return i + 1;
 }
 
-int randomDivide(std::vector<int>& arr, int lowest, int highest) {  //функция для рандомизированного выбора pivot элемента
+int randomDivide(std::vector<int>& arr, int lowest, int highest) {  //the function for randomized pivot element 
     int random = lowest + rand() % (highest - lowest);
     std::swap(arr[random], arr[highest]);
     return divide(arr, lowest, highest);
 }
 
-void quickSort(std::vector<int>& arr, int lowest, int highest) {  //разделение массива на два подмассива
+void quickSort(std::vector<int>& arr, int lowest, int highest) {  //dividing the array into two sub-arrays
     if (lowest < highest) {
-        int pivotal = randomDivide(arr, lowest, highest);  //индекс pivot элемента
+        int pivotal = randomDivide(arr, lowest, highest);  //index pivot element
 
-        quickSort(arr, lowest, pivotal - 1);  //раздельная сортировка элементов до разделения и после разделения 
+        quickSort(arr, lowest, pivotal - 1);  //separated sorting 
         quickSort(arr, pivotal + 1, highest); 
     }
 }
@@ -40,26 +40,26 @@ void printArray(const std::vector<int>& arr) {
 }
 
 
-void bubbleSort(std::vector<int>& arr) {     //для сортировки Bubble Sort
+void bubbleSort(std::vector<int>& arr) {     //for Bubble Sort
     
     int n = arr.size();
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
-                std::swap(arr[j], arr[j + 1]);   //обмен значений
+                std::swap(arr[j], arr[j + 1]);   //shifting elements
             }
         }
     }
 }
 
-void insertionSort(std::vector<int>& arr) {  //для сортировки Incertion sort
+void insertionSort(std::vector<int>& arr) {  //for Incertion sort
     int n = arr.size();
     for (int i = 1; i < n; i++) {
-        int var = arr[i];       //выделение первого элемента для дальнейшей сортировки
+        int var = arr[i];       //chosing the first element for sorting
         int j = i - 1;
 
         while (j >= 0 && arr[j] > var) {
-            arr[j + 1] = arr[j];     //изменение мест элементов
+            arr[j + 1] = arr[j];     //shifting elements
             j--;
         }
         arr[j + 1] = var;
