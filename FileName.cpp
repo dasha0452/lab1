@@ -52,7 +52,7 @@ void bubbleSort(std::vector<int>& arr) {     //for Bubble Sort
     }
 }
 
-void insertionSort(std::vector<int>& arr) {  //for Incertion sort
+void insertionSort(std::vector<int>& arr) {  //for Insertion sort
     int n = arr.size();
     for (int i = 1; i < n; i++) {
         int var = arr[i];       //chosing the first element for sorting
@@ -101,10 +101,10 @@ int main() {
     }
     
 
-    /*Incertion Sort*/
+    /*Insertion Sort*/
 
     int number3;
-    std::cout << "enter the size of the array (Incertion Sort) " << std::endl;
+    std::cout << "enter the size of the array (Insertion Sort) " << std::endl;
     std::cin >> number3;
     std::vector<int> arr2(number3);
     std::cout << "enter the elements of the array" << std::endl;
